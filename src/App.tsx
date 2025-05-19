@@ -6,7 +6,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import RecipeDetail from "./pages/RecipeDetail";
+import Search from "./pages/Search";
 import NotFound from "./pages/NotFound";
+import { CommandMenu } from "./components/CommandMenu";
 
 const queryClient = new QueryClient();
 
@@ -16,9 +18,11 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <CommandMenu />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/recipes/:id" element={<RecipeDetail />} />
+          <Route path="/search" element={<Search />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
