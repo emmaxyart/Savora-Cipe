@@ -4,6 +4,7 @@ import { Recipe } from "@/types";
 import { Bookmark } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import { motion } from "framer-motion";
 
 interface RecipeCardProps {
   recipe: Recipe;
@@ -12,7 +13,11 @@ interface RecipeCardProps {
 
 export default function RecipeCard({ recipe, className }: RecipeCardProps) {
   return (
-    <div className={cn("recipe-card group", className)}>
+    <motion.div 
+      className={cn("recipe-card group", className)}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.98 }}
+    >
       <Link to={`/recipes/${recipe.id}`} className="block">
         <div className="relative overflow-hidden">
           <img 
@@ -74,6 +79,6 @@ export default function RecipeCard({ recipe, className }: RecipeCardProps) {
           <span className="ml-2 text-sm font-medium">{recipe.rating.toFixed(1)}</span>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

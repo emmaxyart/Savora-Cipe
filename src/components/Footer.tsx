@@ -1,5 +1,6 @@
 
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
@@ -21,14 +22,39 @@ export default function Footer() {
                   strokeLinecap="round" 
                   strokeLinejoin="round"
                 >
-                  <path d="M15 11h.01"></path>
-                  <path d="M11 15h.01"></path>
-                  <path d="M16 16h.01"></path>
-                  <path d="m2 16 20 6-6-20A20 20 0 0 0 2 16"></path>
-                  <path d="M5.71 17.11a17.04 17.04 0 0 1 11.4-11.4"></path>
+                  <motion.path 
+                    d="M15 11h.01"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 2 }}
+                  />
+                  <motion.path 
+                    d="M11 15h.01"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 2, delay: 0.2 }}
+                  />
+                  <motion.path 
+                    d="M16 16h.01"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 2, delay: 0.4 }}
+                  />
+                  <motion.path 
+                    d="m2 16 20 6-6-20A20 20 0 0 0 2 16"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 2, delay: 0.6 }}
+                  />
+                  <motion.path 
+                    d="M5.71 17.11a17.04 17.04 0 0 1 11.4-11.4"
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 2, delay: 0.8 }}
+                  />
                 </svg>
               </div>
-              <span className="text-lg font-bold">Savora</span>
+              <span className="font-semibold">Savora</span>
             </Link>
             <p className="text-gray-400 mb-4">Discover and share the best recipes from around the world.</p>
             

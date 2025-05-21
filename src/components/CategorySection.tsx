@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Category } from "@/types";
+import { motion } from "framer-motion";
 
 const categories: Category[] = [
   {
@@ -80,27 +81,66 @@ const categories: Category[] = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+};
+
 export default function CategorySection() {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container-custom">
-        <h2 className="text-3xl font-bold mb-10">Featured Categories</h2>
+        <motion.h2 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-3xl font-bold text-center mb-12"
+        >
+          Browse Categories
+        </motion.h2>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
+        >
           {categories.map((category) => (
-            <Link 
-              to={`/categories/${category.id}`} 
+            <motion.div
               key={category.id}
-              className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="recipe-card p-4 text-center"
             >
-              <div className="w-16 h-16 bg-savora-100 rounded-full flex items-center justify-center text-savora-500 mb-4">
-                {category.icon}
-              </div>
-              <h3 className="font-semibold mb-1">{category.name}</h3>
-              <p className="text-sm text-gray-500">{category.recipeCount}+ Recipes</p>
-            </Link>
+              <Link 
+                to={`/categories/${category.id}`} 
+                key={category.id}
+                className="flex flex-col items-center justify-center p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow text-center"
+              >
+                <div className="w-16 h-16 bg-savora-100 rounded-full flex items-center justify-center text-savora-500 mb-4">
+                  {category.icon}
+                </div>
+                <h3 className="font-semibold mb-1">{category.name}</h3>
+                <p className="text-sm text-gray-500">{category.recipeCount}+ Recipes</p>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

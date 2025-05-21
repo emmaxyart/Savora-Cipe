@@ -6,6 +6,7 @@ import RecipeCard from "@/components/RecipeCard";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Categories() {
   const [activeCategory, setActiveCategory] = useState(mockCategories[0]?.id || "");
@@ -29,23 +30,28 @@ export default function Categories() {
           
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-12">
             {mockCategories.map((category) => (
-              <Card 
+              <motion.div
                 key={category.id}
-                className={`p-6 cursor-pointer transition-all hover:shadow-md ${
-                  activeCategory === category.id ? 'bg-savora-500 text-white' : 'bg-white'
-                }`}
-                onClick={() => setActiveCategory(category.id)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <div className="flex flex-col items-center text-center">
-                  <div className="text-3xl mb-3">{category.icon}</div>
-                  <h3 className="font-medium">{category.name}</h3>
-                  <p className={`text-sm mt-1 ${
-                    activeCategory === category.id ? 'text-white/80' : 'text-gray-500'
-                  }`}>
-                    {category.recipeCount} recipes
-                  </p>
-                </div>
-              </Card>
+                <Card 
+                  className={`p-6 cursor-pointer transition-all hover:shadow-md ${
+                    activeCategory === category.id ? 'bg-savora-500 text-white' : 'bg-white'
+                  }`}
+                  onClick={() => setActiveCategory(category.id)}
+                >
+                  <div className="flex flex-col items-center text-center">
+                    <div className="text-3xl mb-3">{category.icon}</div>
+                    <h3 className="font-medium">{category.name}</h3>
+                    <p className={`text-sm mt-1 ${
+                      activeCategory === category.id ? 'text-white/80' : 'text-gray-500'
+                    }`}>
+                      {category.recipeCount} recipes
+                    </p>
+                  </div>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>

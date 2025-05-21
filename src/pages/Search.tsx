@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
+import { searchRecipes } from "@/services/api";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import RecipeCard from "@/components/RecipeCard";
@@ -8,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search as SearchIcon } from "lucide-react";
 import { Recipe } from "@/types";
-import { mockRecipes } from "@/data/mockData";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Search() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -18,24 +19,19 @@ export default function Search() {
   const [isLoading, setIsLoading] = useState(false);
 
   // Search function
-  const performSearch = (searchTerm: string) => {
-    setIsLoading(true);
+  const performSearch = async (searchTerm: string) => {
+    if (!searchTerm.trim()) return;
     
-    // In a real app, this would be an API call
-    // For now, we'll use the mock data and filter it
-    setTimeout(() => {
-      const filteredRecipes = mockRecipes.filter(recipe => 
-        recipe.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        recipe.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        recipe.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        recipe.ingredients.some(ingredient => 
-          ingredient.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-      );
-      
-      setRecipes(filteredRecipes);
+    setIsLoading(true);
+    try {
+      const response = await searchRecipes(searchTerm);
+      setRecipes(response || []);
+    } catch (error) {
+      console.error("Error fetching recipes:", error);
+      setRecipes([]);
+    } finally {
       setIsLoading(false);
-    }, 500); // Simulate network delay
+    }
   };
 
   // Handle form submission
