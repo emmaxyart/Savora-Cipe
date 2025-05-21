@@ -1,73 +1,40 @@
-# Welcome to your Lovable project
+# Savora-cipe: Your Digital Recipe Companion
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/ce8acf79-a780-4e73-8a70-1b248c57fb97
+Savora-cipe is a modern, interactive recipe platform designed to inspire home cooks of all skill levels. Our application offers a curated collection of delicious recipes from around the world, with intuitive search and filtering capabilities to help users discover their next favorite meal.
 
-## How can I edit this code?
+## Key Features
 
-There are several ways of editing your application.
+- **Interactive Recipe Cards**: Engaging flip-card animations provide recipe details at a glance
+- **Comprehensive Recipe Database**: Access to thousands of recipes through TheMealDB API integration
+- **Smart Search Functionality**: Find recipes by name, ingredients, or cuisine
+- **Category Browsing**: Explore recipes by categories like breakfast, lunch, dinner, and more
+- **Curated Collections**: Discover themed recipe collections for every occasion
+- **Detailed Recipe Pages**: Step-by-step instructions, ingredient lists, and nutritional information
+- **Responsive Design**: Optimized experience across desktop, tablet, and mobile devices
 
-**Use Lovable**
+## Technology Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ce8acf79-a780-4e73-8a70-1b248c57fb97) and start prompting.
+- **Frontend Framework**: React with TypeScript
+- **Styling**: Tailwind CSS with shadcn/ui components
+- **Animations**: Framer Motion for smooth, interactive UI elements
+- **API Integration**: TheMealDB for recipe data
+- **Build Tool**: Vite for fast development and optimized production builds
 
-Changes made via Lovable will be committed automatically to this repo.
+## Target Audience
 
-**Use your preferred IDE**
+Savora-cipe caters to:
+- Home cooks looking for recipe inspiration
+- Food enthusiasts exploring new cuisines and techniques
+- Busy individuals seeking quick and easy meal solutions
+- Health-conscious users searching for nutritious recipes
+- Anyone passionate about cooking and good food
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Vision
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Our vision is to make cooking at home more accessible, enjoyable, and delicious for everyone. We believe that good food brings people together, and we're dedicated to helping users create memorable meals for themselves, their families, and their friends.
 
-Follow these steps:
+## Development Status
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/ce8acf79-a780-4e73-8a70-1b248c57fb97) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Savora-cipe is currently in active development, with new features and recipes being added regularly. The platform is designed to be scalable, allowing for future enhancements such as user accounts, saved recipes, meal planning, and community features.
