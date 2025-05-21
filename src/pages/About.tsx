@@ -8,8 +8,15 @@ import { Link } from "react-router-dom";
 export default function About() {
   const teamMembers = [
     {
+      name: "Edobor Emmanuel",
+      role: "CEO",
+      image: "https://avatars.githubusercontent.com/u/81047924?v=4",
+      bio: "Emmanuel is a Website Developer, Food-Technology Enthusiast, Food Nutritionist and lover of Food."
+      
+    },
+     {
       name: "Alex Morgan",
-      role: "Founder & Head Chef",
+      role: "Head Chef",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1080",
       bio: "Alex has over 15 years of culinary experience in top restaurants across the country."
     },
@@ -55,7 +62,7 @@ export default function About() {
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
             <p className="mb-4">
-              Savora was founded in 2023 with a simple mission: to make cooking at home more 
+              Savora was founded in 2025 with a simple mission: to make cooking at home more 
               accessible, enjoyable, and delicious for everyone.
             </p>
             <p className="mb-4">
@@ -69,7 +76,7 @@ export default function About() {
           </div>
           <div className="md:w-1/2">
             <img 
-              src="https://images.unsplash.com/photo-1556910103-1c02745adc4b?q=80&w=2400" 
+              src="https://media.istockphoto.com/id/1459634934/photo/happy-african-family-cooking-together-at-home-patio-father-mother-daughter-brother-making.webp?a=1&b=1&s=612x612&w=0&k=20&c=I5AnSqTER0MlBTl2CQN0P1naFtPsOoe2WztEuX8KMz0=" 
               alt="Team cooking together" 
               className="rounded-lg shadow-md"
             />
